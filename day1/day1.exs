@@ -8,6 +8,8 @@ defmodule Advent do
     find_repeat(sequence, 9999999, 0)
   end
 
+  def find_repeat([_n], _, repeat), do: repeat
+
   def find_repeat([n | seq], place, repeat) do
     {new_place, new_repeat} = check_column(n, seq, place, repeat, 0)
     if new_place < place do
@@ -17,11 +19,6 @@ defmodule Advent do
     end
   end
 
-  def find_repeat([], _, repeat) do
-    repeat
-  end
-
-  def check_column(_n1, [], place, repeat, _index), do: {place, repeat}
   def check_column(_n1, [_n2], place, repeat, _index), do: {place, repeat}
 
   def check_column(n1, [n2 | seq], place, repeat, index) do
