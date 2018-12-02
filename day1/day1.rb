@@ -54,9 +54,6 @@ time = Benchmark.measure do
       end
     end
   end
-  # Cases this algorithm won't catch:
-    # Repeating value is 0 - it'll find the next value
-    # If the sum is negative
 
   p "Repeating Frequency: #{repeat}"
 end
