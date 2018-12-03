@@ -55,6 +55,7 @@ time = Benchmark.measure do
     end
   end
 
+  p "Cycle this'd take: #{round * input.length + place}"
   p "Repeating Frequency: #{repeat}"
 end
 
