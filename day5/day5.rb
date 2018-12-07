@@ -1,26 +1,24 @@
 raw = File.read("input.txt")
 
-def react_polymer(polymer)
-  raw = polymer.dup
-  cleared = false
+def react_polymer(input)
+  polymer = input.dup
   i = 0
-  while i < raw.length - 1
-    if raw[i] != raw[i+1] && raw[i].upcase == raw[i+1].upcase
+  while i < polymer.length - 1
+    if polymer[i].upcase == polymer[i+1].upcase && polymer[i] != polymer[i+1]
       cleared = 0
-      raw.slice!(i, 2)
+      polymer.slice!(i, 2)
       i -= 2
-      cleared = false
     end
     i += 1
   end
 
-  raw.length
+  polymer.length
 end
 
 p react_polymer(raw)
 
 worst = raw.downcase.split("").uniq.min_by() do |n|
-  react_polymer(raw.gsub(n, "").gsub(n.upcase, ""))
+  react_polymer(raw.gsub(/[#{n}#{n.upcase}]/, ""))
 end
 
-p react_polymer(raw.gsub(worst, "").gsub(worst.upcase, ""))
+p react_polymer(raw.gsub(/[#{worst}#{worst.upcase}]/, ""))
