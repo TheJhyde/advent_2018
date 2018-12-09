@@ -20,6 +20,7 @@ requirements.each do |rule|
 end
 
 sequence = []
+
 while sequence.length < steps.length
   valid_steps = steps.select {|k,v| !v.finished? && v.can_run?}
   next_step = valid_steps.min[1]
@@ -27,12 +28,12 @@ while sequence.length < steps.length
   next_step.status = :finished
 end
 
-p sequence.join
-
 # Have to reset all the steps for part 2
 steps.each do |k, v|
   v.status = :start
 end
+
+p sequence.join("")
 
 seconds = 0
 elves = Array.new(5){Elf.new}
@@ -47,6 +48,9 @@ loop do
   end
 
   valid_steps = steps.select {|k, v| v.can_run?}.values.sort
+  # Mostly I think you can replace the elves with an array of tasks
+  # Except for this bit here - having an object to hold the tasks in makes it
+  # more straightforward to find the empty slots and put new tasks in them
   elves.find_all {|e| !e.tasked?}.each_with_index do |elf, i|
     if i >= valid_steps.length
       break
@@ -60,3 +64,4 @@ loop do
 end
 
 p seconds
+# p sequence

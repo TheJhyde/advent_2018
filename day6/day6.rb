@@ -14,7 +14,6 @@ end
 
 x_max.times do |i|
   y_max.times do |j|
-    
     total_dist = 0
     min_distance = x_max
     index = -1
