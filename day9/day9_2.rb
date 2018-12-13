@@ -48,18 +48,6 @@ class Link
   end
 end
 
-class Circle
-  attr_accessor :head
-
-  def initalize(first)
-    self.head = Link.new(first)
-  end
-
-  def append()
-
-  end
-end
-
 def winning_score(players, last)
   current_marble = Link.new(0)
   zero = current_marble
