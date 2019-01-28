@@ -1,0 +1,37 @@
+"0. Set register 1 to 123."
+[n, 123, 0, 0, 0]
+"1. binary AND register 1 and 456, save result in register 1."
+[n, 72, 0, 0, 0]
+"2. Is register 1 == 72? Save result in register 1."
+[n, 1, 0, 0, 0]
+"3. add register 1 and register 4, save result in register 4. This effects the pointer"
+"4. Set register 4 to 0. This effects the pointer"
+"5. Set register 1 to 0."
+"6. binary OR register 1 and 65536, save result in register 5."
+"7. Set register 1 to 8586263."
+"8. binary AND register 5 and 255, save result in register 2."
+"9. add register 1 and register 2, save result in register 1."
+"10. binary AND register 1 and 16777215, save result in register 1."
+"11. multiply register 1 and 65899, save result in register 1."
+"12. binary AND register 1 and 16777215, save result in register 1."
+"13. Is 256 > register 5? Save result in register 2."
+"14. add register 2 and register 4, save result in register 4. This effects the pointer"
+"15. add register 4 and 1, save result in register 4. This effects the pointer"
+"16. Set register 4 to 27. This effects the pointer"
+"17. Set register 2 to 0."
+"18. add register 2 and 1, save result in register 3."
+"19. multiply register 3 and 256, save result in register 3."
+"20. Is register 3 > register 5? Save result in register 3."
+"21. add register 3 and register 4, save result in register 4. This effects the pointer"
+"22. add register 4 and 1, save result in register 4. This effects the pointer"
+"23. Set register 4 to 25. This effects the pointer"
+"24. add register 2 and 1, save result in register 2."
+"25. Set register 4 to 17. This effects the pointer"
+"26. Set register 5 to the value of register 2."
+"27. Set register 4 to 7. This effects the pointer"
+"28. Is register 1 == register 0? Save result in register 2."
+"29. add register 2 and register 4, save result in register 4. This effects the pointer"
+"30. Set register 4 to 5. This effects the pointer"
+
+So I can enter [n, 0, 0, 0, 0, 0]
+And I'm trying to find out the n such that reg[4] > 30 earliest
